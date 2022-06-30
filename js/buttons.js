@@ -9,7 +9,8 @@ export default function Buttons({
   fillModifyMarket,
   buttonMarket,
   fillModifyFire,
-  buttonFire
+  buttonFire,
+  buttonPressAudio
 
 }) {
 
@@ -85,6 +86,7 @@ export default function Buttons({
     pressTree,
     pressCloud,
     pressMarket,
-    pressFire
+    pressFire,
+    pressButton
   }
 }

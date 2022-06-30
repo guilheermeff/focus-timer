@@ -1,6 +1,10 @@
+import { kitchenTimer } from "./sounds.js"
+
 export default function Timer({
   minutesDisplay,
   secondsDisplay,
+  buttonPlay,
+  buttonPause
 }){
 
   let minutes = Number(minutesDisplay.textContent)
@@ -19,9 +23,10 @@ export default function Timer({
       
       if((minutes == 0) && (seconds == 0)){
         reset()
+        kitchenTimer.play()
         return
       } else if(seconds == 0){
-        seconds = 60
+        seconds = 2
         updateDisplay(String(minutes -1), seconds)
       }
       
@@ -33,10 +38,15 @@ export default function Timer({
   }
   
   function reset(){
-    buttonPlay.classList.toggle('.hide')
-    buttonPause.classList.toggle('.hide')
     
     updateDisplay(newMinutes, newSeconds)
+    clearTimeout(timeOut)
+
+    buttonPlay.classList.remove('hide')
+    buttonPause.classList.add('hide')
+  }
+
+  function pause() {
     clearTimeout(timeOut)
   }
   
@@ -48,6 +58,7 @@ export default function Timer({
   return {
     updateDisplay,
     countDown,
+    pause,
     reset
   }
 }

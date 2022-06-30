@@ -10,55 +10,61 @@ import {
   buttonFire
 } from "./elements.js"
 
+import {
+  rain,
+  nature,
+  fire,
+  coffee,
+  buttonPressAudio,
+} from "./sounds.js"
+
 
 export default function ({buttons, timer}) {
 
   buttonPlay.addEventListener('click', function() {
     buttons.pressPlay()
-    // timer.countDown()
+    buttonPressAudio.play()
+    timer.countDown()
   })
 
   buttonPause.addEventListener('click', function() {
     buttons.pressPause()
-
-    //pressButton()
-    //clearTimeout(timeOut)
+    buttonPressAudio.play()
+    timer.pause()
   })
 
   buttonStop.addEventListener('click', function() {
-    // pressButton()
-    // timer.reset()
+    buttonPressAudio.play()
+    timer.reset()
   })
 
   buttonUp.addEventListener('click', function() {
-    // pressButton()
     buttons.increment()
+    buttonPressAudio.play()
   })
 
   buttonDown.addEventListener('click', function() {
-    // pressButton()
     buttons.decrement()
+    buttonPressAudio.play()
   })
 
   buttonTree.addEventListener('click', function(){
-    // soundTree()
+    nature.play()
     buttons.pressTree()
   })
 
   buttonCloud.addEventListener('click', function(){
-    // soundCloud()
+    rain.play()
     buttons.pressCloud()
   })
 
   buttonMarket.addEventListener('click', function(){
-    // soundMarket()
+    coffee.play()
     buttons.pressMarket()
   })
 
   buttonFire.addEventListener('click', function(){
-    // soundFire()
+    fire.play()
     buttons.pressFire()
   })
-
-  // retornar ou exportar 
 }
