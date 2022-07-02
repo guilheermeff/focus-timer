@@ -42,4 +42,3 @@ const buttons = Buttons({
 })
 
 Events({buttons, timer})
-

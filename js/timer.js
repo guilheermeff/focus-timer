@@ -26,7 +26,7 @@ export default function Timer({
         kitchenTimer.play()
         return
       } else if(seconds == 0){
-        seconds = 60
+        seconds = 2
         updateDisplay(String(minutes -1), seconds)
       }
       

@@ -10,14 +10,7 @@ import {
   buttonFire
 } from "./elements.js"
 
-import {
-  rain,
-  nature,
-  fire,
-  coffee,
-  buttonPressAudio,
-} from "./sounds.js"
-
+import { buttonPressAudio } from "./sounds.js"
 
 export default function ({buttons, timer}) {
 
@@ -49,22 +42,22 @@ export default function ({buttons, timer}) {
   })
 
   buttonTree.addEventListener('click', function(){
-    nature.play()
     buttons.pressTree()
+    buttons.soundTree()
   })
 
   buttonCloud.addEventListener('click', function(){
-    rain.play()
     buttons.pressCloud()
+    buttons.soundCloud()
   })
 
   buttonMarket.addEventListener('click', function(){
-    coffee.play()
     buttons.pressMarket()
+    buttons.soundMarket()
   })
 
   buttonFire.addEventListener('click', function(){
-    fire.play()
     buttons.pressFire()
+    buttons.soundFire()
   })
 }
